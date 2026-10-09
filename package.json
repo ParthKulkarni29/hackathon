@@ -1,0 +1,19 @@
+{
+  "name": "fairpool",
+  "version": "2.0.0",
+  "description": "FairPool — Algorithmic Transit Ride-Pooling & Fair Fare Allocation Engine",
+  "scripts": {
+    "start:backend": "node backend/src/server.js",
+    "start:frontend": "npm --prefix frontend run dev",
+    "test": "node backend/test/test_engine.js"
+  },
+  "keywords": [
+    "ride-pooling",
+    "shapley-value",
+    "game-theory",
+    "vrptw",
+    "transit-optimization"
+  ],
+  "author": "FairPool Team",
+  "license": "MIT"
+}
