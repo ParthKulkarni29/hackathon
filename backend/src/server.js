@@ -955,6 +955,18 @@ app.post('/api/demo/benchmark', (req, res) => {
   res.json(benchmark);
 });
 
+// ----------------------------------------------------
+// Serve Frontend (Production)
+// ----------------------------------------------------
+const path = require('path');
+const frontendDist = path.join(__dirname, '..', '..', 'frontend', 'dist');
+app.use(express.static(frontendDist));
+app.get('*', (req, res) => {
+  if (!req.path.startsWith('/api')) {
+    res.sendFile(path.join(frontendDist, 'index.html'));
+  }
+});
+
 server.listen(PORT, () => {
   console.log(`[FairPool Backend] Server running on http://localhost:${PORT}`);
 });
